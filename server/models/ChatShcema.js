@@ -12,7 +12,13 @@ const ChatSchema = new mongoose.Schema({
         default:Date.now
     }
     
+       
 
 })
 
-export default mongoose.model('Chat', ChatSchema);
+const User = mongoose.model('chatapp', ChatSchema);
+
+
+export default User;
+
+

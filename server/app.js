@@ -15,5 +15,3 @@ Connection();
 app.listen(port, (req,res)=>{
     console.log(`Server is runnning on http://localhost:${port} `)
 })
-
-

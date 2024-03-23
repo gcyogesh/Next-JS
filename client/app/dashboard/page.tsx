@@ -13,4 +13,7 @@ const DashBoardPage = () => {
   )
 }
 
-export default DashBoardPage
+export default DashBoardPage;
+
+
+

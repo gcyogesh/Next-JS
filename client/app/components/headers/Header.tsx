@@ -84,7 +84,7 @@ const Header = () => {
                                                 </p>
                                                 <div className="mt-12">
                                                     <div className="flex flex-wrap text-3xl text-green-800 font-extrabold">
-                                                        <h1>Note: You must Login to chat.</h1>
+                                                        <h1>Note: You must Sign-In to chat.</h1>
                                                     </div>
                                                 </div>
                                             </div>
