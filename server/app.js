@@ -1,17 +1,28 @@
-import express from 'express';
-import dotenv from 'dotenv'
-import Connection from './database/Connection.js'
+import { Server } from 'socket.io';
+import http from 'http';
 
+// Create HTTP server
+const httpServer = http.createServer();
 
+// Initialize Socket.IO server
+const io = new Server(httpServer, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"]
+  }
+});
 
-const app = express();
-dotenv.config();
+// Event listener for connections
+io.on("connection", (socket) => {
+  console.log("A user connected");
+  socket.on("message", (message, roomName) => {
+    console.log(message, roomName);
+    // Handle incoming message and potentially broadcast it
+  });
+});
 
-const port = process.env.PORT;
-
-
-Connection();
-
-app.listen(port, (req,res)=>{
-    console.log(`Server is runnning on http://localhost:${port} `)
-})
+// Start the server listening
+const PORT = 3000;
+httpServer.listen(PORT, () => {
+  console.log(`Socket.IO server is running on http://localhost:${PORT}`);
+});
